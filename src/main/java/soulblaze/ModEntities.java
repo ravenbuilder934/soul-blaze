@@ -35,7 +35,7 @@ public class ModEntities {
 	{
 		init();
 		event.getRegistry().registerAll(
-				new SpawnEggItem(SOUL_BLAZE, -3546547, -65179583, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(SoulBlaze.MOD_ID, "soulblaze_spawn_egg"));
+				new SpawnEggItem(SOUL_BLAZE, 4411786, 16775294, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(SoulBlaze.MOD_ID, "soulblaze_spawn_egg"));
 	}
 
 	public static void registerEntityAttributes()
