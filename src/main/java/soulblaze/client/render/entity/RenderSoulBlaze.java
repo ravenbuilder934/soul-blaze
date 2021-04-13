@@ -12,23 +12,23 @@ import soulblaze.entities.SoulBlazeEntity;
 @OnlyIn(Dist.CLIENT)
 public class RenderSoulBlaze extends MobRenderer<SoulBlazeEntity, ModelSoulBlaze<SoulBlazeEntity>>
 {
-	private static final ResourceLocation SOUL_BLAZE_TEXTURES = new ResourceLocation("soulblaze:textures/entity/soulblaze.png");
+    private static final ResourceLocation SOUL_BLAZE_TEXTURES = new ResourceLocation("soulblaze:textures/entity/soulblaze.png");
 
-	public RenderSoulBlaze(EntityRendererManager renderManagerIn)
-	{
-		super(renderManagerIn, new ModelSoulBlaze<>(), 0.5F);
-	}
+    public RenderSoulBlaze(EntityRendererManager renderManagerIn)
+    {
+        super(renderManagerIn, new ModelSoulBlaze<>(), 0.5F);
+    }
 
-	protected int getBlockLight(SoulBlazeEntity entityIn, BlockPos partialTicks)
-	{
-		return 15;
-	}
+    protected int getBlockLight(SoulBlazeEntity entityIn, BlockPos partialTicks)
+    {
+        return 15;
+    }
 
-	/**
-	 * Returns the location of an entity's texture.
-	 */
-	public ResourceLocation getEntityTexture(SoulBlazeEntity entity)
-	{
-		return SOUL_BLAZE_TEXTURES;
-	}
+    /**
+     * Returns the location of an entity's texture.
+     */
+    public ResourceLocation getEntityTexture(SoulBlazeEntity entity)
+    {
+        return SOUL_BLAZE_TEXTURES;
+    }
 }

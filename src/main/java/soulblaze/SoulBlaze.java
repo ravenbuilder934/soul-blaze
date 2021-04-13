@@ -12,23 +12,23 @@ import soulblaze.client.render.entity.RenderSoulBlaze;
 public class SoulBlaze
 {
 
-	public static final String MOD_ID = "soulblaze";
+    public static final String MOD_ID = "soulblaze";
 
-	public SoulBlaze ()
-	{
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-		MinecraftForge.EVENT_BUS.register(this);
-	}
+    public SoulBlaze()
+    {
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
-	private void setup(final FMLCommonSetupEvent event)
-	{
-		//MinecraftForge.EVENT_BUS.register(new ModSpawns());
-		ModEntities.registerEntityAttributes();
-	}
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        //MinecraftForge.EVENT_BUS.register(new ModSpawns());
+        ModEntities.registerEntityAttributes();
+    }
 
-	private void doClientStuff(final FMLClientSetupEvent event)
-	{
-		RenderingRegistry.registerEntityRenderingHandler(ModEntities.SOUL_BLAZE, RenderSoulBlaze::new);
-	}
+    private void doClientStuff(final FMLClientSetupEvent event)
+    {
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.SOUL_BLAZE, RenderSoulBlaze::new);
+    }
 }
