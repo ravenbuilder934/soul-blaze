@@ -3,6 +3,7 @@ package soulblaze;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
+import net.minecraft.entity.monster.BlazeEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
@@ -11,17 +12,16 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
-import soulblaze.entities.SoulBlazeEntity;
 
 @Mod.EventBusSubscriber(modid = SoulBlaze.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities
 {
 
-    public static EntityType<SoulBlazeEntity> SOUL_BLAZE;
+    public static EntityType<BlazeEntity> SOUL_BLAZE;
 
     public static void init()
     {
-        SOUL_BLAZE = EntityType.Builder.create(SoulBlazeEntity::new, EntityClassification.MONSTER).immuneToFire().size(0.6F, 1.8F).trackingRange(8).build(getEntityResource("soulblaze").toString());
+        SOUL_BLAZE = EntityType.Builder.create(BlazeEntity::new, EntityClassification.MONSTER).immuneToFire().size(0.6F, 1.8F).trackingRange(8).build(getEntityResource("soulblaze").toString());
     }
 
     @SubscribeEvent
@@ -41,7 +41,7 @@ public class ModEntities
 
     public static void registerEntityAttributes()
     {
-        GlobalEntityTypeAttributes.put(SOUL_BLAZE, SoulBlazeEntity.registerAttributes().create());
+        GlobalEntityTypeAttributes.put(SOUL_BLAZE, BlazeEntity.registerAttributes().create());
     }
 
     private static ResourceLocation getEntityResource(String entityName)
