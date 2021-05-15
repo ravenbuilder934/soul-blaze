@@ -11,7 +11,6 @@ import soulblaze.client.render.entity.RenderSoulBlaze;
 @Mod(SoulBlaze.MOD_ID)
 public class SoulBlaze
 {
-
     public static final String MOD_ID = "soulblaze";
 
     public SoulBlaze()
@@ -23,6 +22,7 @@ public class SoulBlaze
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        MinecraftForge.EVENT_BUS.register(new ModSpawns());
         ModEntities.registerEntityAttributes();
     }
 
