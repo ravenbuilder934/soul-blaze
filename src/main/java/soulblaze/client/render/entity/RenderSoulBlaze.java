@@ -19,7 +19,7 @@ public class RenderSoulBlaze extends MobRenderer<BlazeEntity, ModelSoulBlaze<Bla
         super(renderManagerIn, new ModelSoulBlaze<>(), 0.5F);
     }
 
-    protected int getBlockLight(BlazeEntity entityIn, BlockPos partialTicks)
+    protected int getBlockLightLevel(BlazeEntity entityIn, BlockPos partialTicks)
     {
         return 15;
     }
@@ -27,7 +27,7 @@ public class RenderSoulBlaze extends MobRenderer<BlazeEntity, ModelSoulBlaze<Bla
     /**
      * Returns the location of an entity's texture.
      */
-    public ResourceLocation getEntityTexture(BlazeEntity entity)
+    public ResourceLocation getTextureLocation(BlazeEntity entity)
     {
         return SOUL_BLAZE_TEXTURES;
     }

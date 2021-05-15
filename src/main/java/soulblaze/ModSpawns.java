@@ -23,8 +23,8 @@ public class ModSpawns
             BlazeEntity soulBlaze = ModEntities.SOUL_BLAZE.create((World) event.getWorld());
             if (soulBlaze != null)
             {
-                soulBlaze.setPosition(event.getX(), event.getY(), event.getZ());
-                event.getWorld().addEntity(soulBlaze);
+                soulBlaze.setPos(event.getX(), event.getY(), event.getZ());
+                event.getWorld().addFreshEntity(soulBlaze);
             }
         }
     }

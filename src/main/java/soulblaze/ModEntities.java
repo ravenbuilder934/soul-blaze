@@ -21,7 +21,7 @@ public class ModEntities
 
     public static void init()
     {
-        SOUL_BLAZE = EntityType.Builder.create(BlazeEntity::new, EntityClassification.MONSTER).immuneToFire().size(0.6F, 1.8F).trackingRange(8).build(getEntityResource("soulblaze").toString());
+        SOUL_BLAZE = EntityType.Builder.of(BlazeEntity::new, EntityClassification.MONSTER).fireImmune().sized(0.6F, 1.8F).clientTrackingRange(8).build(getEntityResource("soulblaze").toString());
     }
 
     @SubscribeEvent
@@ -36,12 +36,12 @@ public class ModEntities
     {
         init();
         event.getRegistry().registerAll(
-                new SpawnEggItem(SOUL_BLAZE, 4411786, 16775294, new Item.Properties().group(ItemGroup.MISC)).setRegistryName(SoulBlaze.MOD_ID, "soulblaze_spawn_egg"));
+                new SpawnEggItem(SOUL_BLAZE, 4411786, 16775294, new Item.Properties().tab(ItemGroup.TAB_MISC)).setRegistryName(SoulBlaze.MOD_ID, "soulblaze_spawn_egg"));
     }
 
     public static void registerEntityAttributes()
     {
-        GlobalEntityTypeAttributes.put(SOUL_BLAZE, BlazeEntity.registerAttributes().create());
+        GlobalEntityTypeAttributes.put(SOUL_BLAZE, BlazeEntity.createAttributes().build());
     }
 
     private static ResourceLocation getEntityResource(String entityName)
