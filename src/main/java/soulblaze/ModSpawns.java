@@ -18,7 +18,7 @@ public class ModSpawns
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onSpecialSpawn(LivingSpawnEvent.SpecialSpawn event)
     {
-        if (event.getEntity() instanceof BlazeEntity && !(event.getSpawnReason() == SpawnReason.SPAWN_EGG) && rand.nextInt(2) == 1) //50% chance to cancel the normal blaze and spawn a soul blaze instead. doesn't apply if the blaze is being spawned from a spawn egg
+        if (event.getEntity() instanceof BlazeEntity && !(event.getSpawnReason() == SpawnReason.SPAWN_EGG) && !(event.getSpawnReason() == SpawnReason.COMMAND) && rand.nextInt(2) == 1) //50% chance to cancel the normal blaze and spawn a soul blaze instead. doesn't apply if the blaze is being spawned from a spawn egg or a command
         {
             event.setCanceled(true);
             BlazeEntity soulBlaze = ModEntities.SOUL_BLAZE.create((World) event.getWorld());
