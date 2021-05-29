@@ -9,6 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -39,9 +40,10 @@ public class ModEntities
                 new SpawnEggItem(SOUL_BLAZE, 4411786, 16775294, new Item.Properties().tab(ItemGroup.TAB_MISC)).setRegistryName(SoulBlaze.MOD_ID, "soulblaze_spawn_egg"));
     }
 
-    public static void registerEntityAttributes()
+    @SubscribeEvent
+    public static void registerAttributes(final EntityAttributeCreationEvent event)
     {
-        GlobalEntityTypeAttributes.put(SOUL_BLAZE, BlazeEntity.createAttributes().build());
+        event.put(SOUL_BLAZE, BlazeEntity.createAttributes().build());
     }
 
     private static ResourceLocation getEntityResource(String entityName)
