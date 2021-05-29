@@ -23,7 +23,6 @@ public class SoulBlaze
     private void setup(final FMLCommonSetupEvent event)
     {
         MinecraftForge.EVENT_BUS.register(new ModSpawns());
-        ModEntities.registerEntityAttributes();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
