@@ -2,7 +2,6 @@ package soulblaze;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.entity.monster.BlazeEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
