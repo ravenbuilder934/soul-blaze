@@ -1,8 +1,7 @@
-package soulblaze;
+package soulblaze.entity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.monster.BlazeEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
@@ -12,16 +11,19 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
+import soulblaze.SoulBlaze;
+import soulblaze.fireball.SmallBlueFireballEntity;
 
 @Mod.EventBusSubscriber(modid = SoulBlaze.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities
 {
-
-    public static EntityType<BlazeEntity> SOUL_BLAZE;
+    public static EntityType<SoulBlazeEntity> SOUL_BLAZE;
+    public static EntityType<SmallBlueFireballEntity> SMALL_BLUE_FIREBALL;
 
     public static void init()
     {
-        SOUL_BLAZE = EntityType.Builder.of(BlazeEntity::new, EntityClassification.MONSTER).fireImmune().sized(0.6F, 1.8F).clientTrackingRange(8).build(getEntityResource("soulblaze").toString());
+        SOUL_BLAZE = EntityType.Builder.of(SoulBlazeEntity::new, EntityClassification.MONSTER).fireImmune().sized(0.6F, 1.8F).clientTrackingRange(8).build(getEntityResource("soulblaze").toString());
+        SMALL_BLUE_FIREBALL = EntityType.Builder.of(SmallBlueFireballEntity::new, EntityClassification.MISC).sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10).build(getEntityResource("small_blue_fireball").toString());
     }
 
     @SubscribeEvent
@@ -29,6 +31,7 @@ public class ModEntities
     {
         final IForgeRegistry<EntityType<?>> registry = e.getRegistry();
         registry.register(SOUL_BLAZE.setRegistryName(SoulBlaze.MOD_ID, "soulblaze"));
+        registry.register(SMALL_BLUE_FIREBALL.setRegistryName(SoulBlaze.MOD_ID, "soulblaze"));
     }
 
     @SubscribeEvent
@@ -42,7 +45,7 @@ public class ModEntities
     @SubscribeEvent
     public static void registerAttributes(final EntityAttributeCreationEvent event)
     {
-        event.put(SOUL_BLAZE, BlazeEntity.createAttributes().build());
+        event.put(SOUL_BLAZE, SoulBlazeEntity.createAttributes().build());
     }
 
     private static ResourceLocation getEntityResource(String entityName)

@@ -1,4 +1,4 @@
-package soulblaze.client.model;
+package soulblaze.client;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;

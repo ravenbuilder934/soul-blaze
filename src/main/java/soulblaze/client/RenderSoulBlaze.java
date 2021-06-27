@@ -1,16 +1,15 @@
-package soulblaze.client.render.entity;
+package soulblaze.client;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.entity.monster.BlazeEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import soulblaze.client.model.ModelSoulBlaze;
+import soulblaze.entity.SoulBlazeEntity;
 
 @OnlyIn(Dist.CLIENT)
-public class RenderSoulBlaze extends MobRenderer<BlazeEntity, ModelSoulBlaze<BlazeEntity>>
+public class RenderSoulBlaze extends MobRenderer<SoulBlazeEntity, ModelSoulBlaze<SoulBlazeEntity>>
 {
     private static final ResourceLocation SOUL_BLAZE_TEXTURES = new ResourceLocation("soulblaze:textures/entity/soulblaze.png");
 
@@ -19,7 +18,7 @@ public class RenderSoulBlaze extends MobRenderer<BlazeEntity, ModelSoulBlaze<Bla
         super(renderManagerIn, new ModelSoulBlaze<>(), 0.5F);
     }
 
-    protected int getBlockLightLevel(BlazeEntity entityIn, BlockPos partialTicks)
+    protected int getBlockLightLevel(SoulBlazeEntity entityIn, BlockPos partialTicks)
     {
         return 15;
     }
@@ -27,7 +26,7 @@ public class RenderSoulBlaze extends MobRenderer<BlazeEntity, ModelSoulBlaze<Bla
     /**
      * Returns the location of an entity's texture.
      */
-    public ResourceLocation getTextureLocation(BlazeEntity entity)
+    public ResourceLocation getTextureLocation(SoulBlazeEntity entity)
     {
         return SOUL_BLAZE_TEXTURES;
     }
