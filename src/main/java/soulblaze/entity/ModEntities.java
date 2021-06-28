@@ -23,7 +23,7 @@ public class ModEntities
     public static void init()
     {
         SOUL_BLAZE = EntityType.Builder.of(SoulBlazeEntity::new, EntityClassification.MONSTER).fireImmune().sized(0.6F, 1.8F).clientTrackingRange(8).build(getEntityResource("soulblaze").toString());
-        SMALL_BLUE_FIREBALL = EntityType.Builder.of(SmallBlueFireballEntity::new, EntityClassification.MISC).sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10).build(getEntityResource("small_blue_fireball").toString());
+        SMALL_BLUE_FIREBALL = EntityType.Builder.<SmallBlueFireballEntity>of(SmallBlueFireballEntity::new, EntityClassification.MISC).sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10).build(getEntityResource("small_blue_fireball").toString());
     }
 
     @SubscribeEvent
@@ -31,15 +31,14 @@ public class ModEntities
     {
         final IForgeRegistry<EntityType<?>> registry = e.getRegistry();
         registry.register(SOUL_BLAZE.setRegistryName(SoulBlaze.MOD_ID, "soulblaze"));
-        registry.register(SMALL_BLUE_FIREBALL.setRegistryName(SoulBlaze.MOD_ID, "soulblaze"));
+        registry.register(SMALL_BLUE_FIREBALL.setRegistryName(SoulBlaze.MOD_ID, "small_blue_fireball"));
     }
 
     @SubscribeEvent
     public static void registerSpawnEggs(final RegistryEvent.Register<Item> event)
     {
         init();
-        event.getRegistry().registerAll(
-                new SpawnEggItem(SOUL_BLAZE, 4411786, 16775294, new Item.Properties().tab(ItemGroup.TAB_MISC)).setRegistryName(SoulBlaze.MOD_ID, "soulblaze_spawn_egg"));
+        event.getRegistry().registerAll(new SpawnEggItem(SOUL_BLAZE, 4411786, 16775294, new Item.Properties().tab(ItemGroup.TAB_MISC)).setRegistryName(SoulBlaze.MOD_ID, "soulblaze_spawn_egg"));
     }
 
     @SubscribeEvent

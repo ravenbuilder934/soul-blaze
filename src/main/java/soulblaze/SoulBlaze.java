@@ -1,5 +1,6 @@
 package soulblaze;
 
+import net.minecraft.block.DispenserBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -8,6 +9,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import soulblaze.client.RenderSoulBlaze;
 import soulblaze.entity.ModEntities;
+import soulblaze.fireball.DispenseSoulFireCharge;
 import soulblaze.fireball.ModItems;
 import soulblaze.spawning.ModSpawns;
 
@@ -26,7 +28,8 @@ public class SoulBlaze
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        MinecraftForge.EVENT_BUS.register(new ModSpawns());
+        //MinecraftForge.EVENT_BUS.register(new ModSpawns());
+        DispenserBlock.registerBehavior(ModItems.SOUL_FIRE_CHARGE.get(), new DispenseSoulFireCharge());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)

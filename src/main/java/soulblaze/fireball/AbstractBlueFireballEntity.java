@@ -5,7 +5,7 @@ import net.minecraft.entity.IRendersAsItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractFireballEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -46,16 +46,43 @@ public abstract class AbstractBlueFireballEntity extends AbstractFireballEntity 
     public ItemStack getItem()
     {
         ItemStack itemstack = this.getItemRaw();
-        return itemstack.isEmpty() ? new ItemStack(Items.FIRE_CHARGE) : itemstack;
+        return itemstack.isEmpty() ? new ItemStack(ModItems.SOUL_FIRE_CHARGE.get()) : itemstack;
     }
 
     @Override
     public void setItem(ItemStack p_213898_1_)
     {
-        if (p_213898_1_.getItem() != Items.FIRE_CHARGE || p_213898_1_.hasTag())
+        if (p_213898_1_.getItem() != ModItems.SOUL_FIRE_CHARGE.get() || p_213898_1_.hasTag())
         {
             this.getEntityData().set(DATA_ITEM_STACK, Util.make(p_213898_1_.copy(), (p_213897_0_) ->
                     p_213897_0_.setCount(1)));
         }
+
+    }
+
+    @Override
+    protected void defineSynchedData()
+    {
+        this.getEntityData().define(DATA_ITEM_STACK, ItemStack.EMPTY);
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundNBT p_213281_1_)
+    {
+        super.addAdditionalSaveData(p_213281_1_);
+        ItemStack itemstack = this.getItemRaw();
+        if (!itemstack.isEmpty())
+        {
+            p_213281_1_.put("Item", itemstack.save(new CompoundNBT()));
+        }
+
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundNBT p_70037_1_)
+    {
+        super.readAdditionalSaveData(p_70037_1_);
+        ItemStack itemstack = ItemStack.of(p_70037_1_.getCompound("Item"));
+        this.setItem(itemstack);
     }
 }

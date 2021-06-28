@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "soulblaze:item/blue_fire_charge"
+    "layer0": "soulblaze:item/soul_fire_charge"
   }
 }
