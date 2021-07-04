@@ -1,4 +1,4 @@
-package soulblaze.fireball;
+package soulblaze.item;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;

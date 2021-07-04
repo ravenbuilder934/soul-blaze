@@ -1,4 +1,4 @@
-package soulblaze.fireball;
+package soulblaze.entity;
 
 import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.entity.*;
@@ -6,7 +6,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.*;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import soulblaze.entity.ModEntities;
 
 public class SmallBlueFireballEntity extends AbstractBlueFireballEntity
 {

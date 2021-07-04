@@ -1,4 +1,4 @@
-package soulblaze.fireball;
+package soulblaze.item;
 
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.IBlockSource;
@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Util;
 import net.minecraft.world.World;
+import soulblaze.entity.SmallBlueFireballEntity;
 
 import javax.annotation.Nonnull;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package soulblaze.fireball;
+package soulblaze.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.IRendersAsItem;
@@ -13,6 +13,7 @@ import net.minecraft.util.Util;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import soulblaze.item.ModItems;
 
 @OnlyIn(value = Dist.CLIENT, _interface = IRendersAsItem.class)
 

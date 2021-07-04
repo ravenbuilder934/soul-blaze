@@ -14,7 +14,6 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import soulblaze.fireball.SmallBlueFireballEntity;
 
 import java.util.EnumSet;
 

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "soulblaze:soul_blaze_rod"
+    }
+  ],
+  "result": {
+    "item": "soulblaze:soul_blaze_powder",
+    "count": 2
+  }
+}

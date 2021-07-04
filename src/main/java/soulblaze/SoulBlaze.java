@@ -9,9 +9,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import soulblaze.client.RenderSoulBlaze;
 import soulblaze.entity.ModEntities;
-import soulblaze.fireball.DispenseSoulFireCharge;
-import soulblaze.fireball.ModItems;
-import soulblaze.spawning.ModSpawns;
+import soulblaze.item.DispenseSoulFireCharge;
+import soulblaze.item.ModItems;
 
 @Mod(SoulBlaze.MOD_ID)
 public class SoulBlaze
