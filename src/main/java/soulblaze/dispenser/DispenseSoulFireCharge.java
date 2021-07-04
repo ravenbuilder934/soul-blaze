@@ -1,4 +1,4 @@
-package soulblaze.item;
+package soulblaze.dispenser;
 
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.IBlockSource;

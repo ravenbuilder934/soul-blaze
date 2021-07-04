@@ -1,6 +1,9 @@
 {
   "entity.soulblaze.soulblaze": "Soul Blaze",
-  "item.soulblaze.soulblaze_spawn_egg": "Soul Blaze Spawn Egg",
   "entity.soulblaze.small_blue_fireball": "Small Blue Fireball",
+
+  "item.soulblaze.soulblaze_spawn_egg": "Soul Blaze Spawn Egg",
+  "item.soulblaze.soul_blaze_rod": "Soul Blaze Rod",
+  "item.soulblaze.soul_blaze_powder": "Soul Blaze Powder",
   "item.soulblaze.soul_fire_charge": "Soul Fire Charge"
 }
