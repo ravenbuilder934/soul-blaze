@@ -9,6 +9,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import soulblaze.brewing.MundanePotionBrewingRecipe;
+import soulblaze.brewing.StrengthPotionBrewingRecipe;
 import soulblaze.client.RenderSoulBlaze;
 import soulblaze.dispenser.DispenseSoulFireCharge;
 import soulblaze.entity.ModEntities;
@@ -33,6 +34,7 @@ public class SoulBlaze
         MinecraftForge.EVENT_BUS.register(new ModSpawns());
         DispenserBlock.registerBehavior(ModItems.SOUL_FIRE_CHARGE.get(), new DispenseSoulFireCharge());
         BrewingRecipeRegistry.addRecipe(new MundanePotionBrewingRecipe());
+        BrewingRecipeRegistry.addRecipe(new StrengthPotionBrewingRecipe());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
